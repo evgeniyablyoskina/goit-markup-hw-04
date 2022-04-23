@@ -7,10 +7,6 @@
     footer
 */
 
-/* все что касается блочной модели. дисплеи паддинги марджины бордеры геометрия
-потом цвет и текст
-потом оформительные эффекты */
-
 /* --------------- Common */
 
 :root {
@@ -26,6 +22,8 @@
   --logo-color-dark: #ffffff;
   --address-contact-color: rgba(255, 255, 255, 0.6);
   --address-map-color: #ffffff;
+  --icon-color: #afb1b8;
+  --icon-bg-color: rgba(255, 255, 255, 0.1);
 
   --item-gap: 30px;
 }
@@ -50,7 +48,6 @@ body {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  /* padding: 0 calc(50% - 590px); */
 }
 
 img {
@@ -147,13 +144,16 @@ img {
 
 .contacts-nav {
   margin-right: -25px;
+  align-items: center;
 }
 
 .contacts-nav-link {
-  display: inline-block;
+  display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
+  align-items: center;
   color: var(--primary-text-color);
+  fill: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -164,6 +164,11 @@ img {
 .contacts-nav-link:hover,
 .contacts-nav-link:focus {
   color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
+.contacts-nav-icon {
+  margin-right: 10px;
 }
 
 .current {
@@ -177,10 +182,20 @@ img {
 /* --------------- Hero */
 
 .hero {
-  background-color: var(--dark-bg-color);
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+
+  background-color: var(--dark-bg-color);
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
@@ -199,6 +214,7 @@ img {
   padding: 10px 32px;
   border-radius: 4px;
   min-width: 200px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   cursor: pointer;
   text-align: center;
@@ -249,6 +265,10 @@ img {
 .features-item {
   flex-basis: calc(100% / 4 - var(--item-gap));
   margin-left: var(--item-gap);
+}
+
+.features-icon {
+  margin-bottom: 30px;
 }
 
 .features-title {
@@ -304,6 +324,9 @@ img {
 .team-item {
   flex-basis: calc(100% / 4 - var(--item-gap));
   margin-left: var(--item-gap);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-content {
@@ -312,7 +335,7 @@ img {
 
 .team-title {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 
   color: var(--title-text-color);
   font-weight: 500;
@@ -322,15 +345,72 @@ img {
 }
 
 .team-text {
-  margin-top: 10px;
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
 
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
 }
 
+.team-contact-list {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+.team-contact-link {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 50%;
+
+  color: var(--icon-color);
+}
+
+.team-contact-link:hover,
+.team-contact-link:focus {
+  color: var(--logo-color-dark);
+  background-color: var(--accent-color);
+}
+
+.team-contact-icon {
+  fill: currentColor;
+}
+
 /* END our team */
+
+/* --------------- Our Clients */
+
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  color: var(--icon-color);
+}
+
+.client-link:hover,
+.client-link:focus {
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.client-icon {
+  fill: currentColor;
+}
+
+/* END our Clients */
 
 /* END INDEX.html */
 
@@ -369,6 +449,9 @@ img {
 .filtr-btn:hover,
 .filtr-btn:focus {
   border: 1px solid var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 
   background-color: var(--accent-color);
   color: var(--btn-text-color);
@@ -391,6 +474,16 @@ img {
   margin-top: var(--item-gap);
 }
 
+.examples-item:hover,
+.examples-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.examples-link {
+  text-decoration: none;
+}
+
 .examples-content {
   border: 1px solid #eeeeee;
   padding: 20px 24px;
@@ -410,6 +503,7 @@ img {
   margin-top: 0;
   margin-bottom: 0;
 
+  color: var(--primary-text-color);
   font-size: 16px;
   line-height: 1.86;
 }
@@ -425,6 +519,14 @@ img {
   padding-bottom: 60px;
 
   background-color: var(--dark-bg-color);
+}
+
+.footer-list {
+  display: flex;
+}
+
+.footer-item:nth-child(1) {
+  margin-right: 70px;
 }
 
 .address {
@@ -461,6 +563,47 @@ img {
 .address-contact:hover,
 .address-contact:focus {
   color: var(--accent-color);
+}
+
+.join {
+  padding-top: 12px;
+}
+
+.join-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  color: var(--logo-color-dark);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+.join-contact-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.join-contact-link {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  margin-right: 10px;
+  border-radius: 50%;
+
+  color: var(--logo-color-dark);
+  background-color: var(--icon-bg-color);
+}
+
+.join-contact-link:hover,
+.join-contact-link:focus {
+  background-color: var(--accent-color);
+}
+
+.join-contact-icon {
+  fill: currentColor;
 }
 
 /* END Footer */

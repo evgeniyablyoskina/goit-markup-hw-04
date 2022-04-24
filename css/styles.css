@@ -268,7 +268,14 @@ img {
 }
 
 .features-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
+  /* width: 270px; */
+  height: 120px;
+  border-radius: 4px;
+  background-color: var(--second-bg-color);
 }
 
 .features-title {
@@ -324,6 +331,7 @@ img {
 .team-item {
   flex-basis: calc(100% / 4 - var(--item-gap));
   margin-left: var(--item-gap);
+  background-color: var(--main-bg-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -355,16 +363,19 @@ img {
 
 .team-contact-list {
   display: flex;
-  justify-content: space-between;
-  padding-right: 32px;
-  padding-left: 32px;
+  justify-content: center;
+}
+
+.team-contact-item:not(:first-child) {
+  margin-left: 10px;
 }
 
 .team-contact-link {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
-  padding: 12px;
   border-radius: 50%;
 
   color: var(--icon-color);
@@ -474,14 +485,15 @@ img {
   margin-top: var(--item-gap);
 }
 
-.examples-item:hover,
-.examples-item:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+.examples-link {
+  display: block;
+  text-decoration: none;
 }
 
-.examples-link {
-  text-decoration: none;
+.examples-link:hover,
+.examples-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .examples-content {
@@ -523,6 +535,7 @@ img {
 
 .footer-list {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-item:nth-child(1) {
@@ -565,10 +578,6 @@ img {
   color: var(--accent-color);
 }
 
-.join {
-  padding-top: 12px;
-}
-
 .join-title {
   margin-top: 0;
   margin-bottom: 20px;
@@ -586,10 +595,11 @@ img {
 }
 
 .join-contact-link {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
-  padding: 12px;
   margin-right: 10px;
   border-radius: 50%;
 
